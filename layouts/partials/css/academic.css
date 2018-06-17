@@ -22,15 +22,16 @@
 
 html {
   font-family: '{{ .Get "body_font" }}', sans-serif;
-  font-size: {{ .Get "font_size_small" }}px;
+  /* font-size: {{ .Get "font_size_small" }}px; */
+  font-size: 100%;
   color: rgba(0,0,0,0.8);
-  line-height: 1.65;
+  line-height: 1.414;
 }
-@media screen and (min-width: 58em) {
-  html {
-    font-size: {{ .Get "font_size" }}px;
-  }
-}
+/* @media screen and (min-width: 58em) { */
+/*   html { */
+/*     font-size: {{ .Get "font_size" }}px; */
+/*   } */
+/* } */
 
 body {
   font-family: inherit;
@@ -84,29 +85,35 @@ ul, ol, dl {
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: '{{ .Get "heading_font" }}', sans-serif;
-  font-weight: 400;
-  margin-bottom: .5rem;
+  font-weight: bold;
+  margin-bottom: .707rem;
   line-height: 1.25;
   color: #313131;
   text-rendering: optimizeLegibility;
   overflow-wrap: break-word; /* Ensures very long heading words do not overflow into content. */
 }
 h1 {
-  font-size: 2.25rem;
+  margin-top: 3.998rem;
+  font-size: 2.827rem;
 }
 h2 {
-  margin-top: 1rem;
-  font-size: 1.5rem;
+  margin-top: 2.827rem;
+  font-size: 2rem;
+}
+h1 + h2 {
+  margin-top: 0;
 }
 h3 {
   font-weight: 700;
-  margin-top: 1.5rem;
-  font-size: 1.25rem;
+  margin-top: 1.414rem;
+  font-size: 1.414rem;
 }
 h4, h5, h6 {
-  font-weight: 700;
+  font-family: '{{ .Get "small_heading_font" }}',  '{{ .Get "heading_font" }}', sans-serif;
+  font-weight: 800;
   margin-top: 1rem;
   font-size: 1rem;
+  text-transform: uppercase;
 }
 
 a,
@@ -363,6 +370,9 @@ a[data-fancybox] img {
 
 .section-heading h1 {
   margin: 0 0 10px 0;
+  font-family: '{{ .Get "small_heading_font" }}', '{{ .Get "heading_font" }}', sans-serif;
+  text-transform: uppercase;
+  font-size: 1.75rem;
 }
 
 .section-heading p {
@@ -500,10 +510,6 @@ a[data-fancybox] img {
   margin-right: 0;
 }
 
-#profile .network-icon li:hover {
-  transform: scale(1.2)
-}
-
 .big-icon {
   font-size: 2rem;
 }
@@ -596,6 +602,10 @@ article {
   max-width: 760px;
   padding: 1rem 20px 0 20px;
   margin: 0 auto 0 auto;
+}
+
+.article-container > h1:first-child {
+  margin-top: 1.414rem;
 }
 
 .article-header {
@@ -846,6 +856,15 @@ article .article-metadata {
 
 .card-simple p.read-more {
   margin: 0;
+  margin-top: 1rem;
+}
+
+.card-simple .article-title {
+  margin-top: 0;
+}
+
+.card-simple .article-metadata {
+  margin-bottom: 0;
 }
 
 .dark .card-simple {
@@ -870,9 +889,8 @@ article .article-metadata {
 }
 
 .card h4 {
-  font-size: 0.9rem;
+  margin-top: 0;
   font-weight: 700;
-  line-height: 1.5;
   text-transform: uppercase;
 }
 
@@ -1168,6 +1186,9 @@ nav#navbar-main li {
   line-height: 50px;
   padding-top: 10px;
   padding-bottom: 10px;
+
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 .navbar-brand img {
@@ -1281,6 +1302,7 @@ nav#navbar-main li {
   .navbar-nav > li > a {
     padding-top: 10px;
     padding-bottom: 10px;
+    padding-left: 0;
     line-height: normal;
   }
 
